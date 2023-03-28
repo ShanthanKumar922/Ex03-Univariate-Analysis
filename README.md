@@ -1,83 +1,88 @@
 # Ex03-Univariate-Analysis
-# AIM
-To perform Univariate EDA on the given data set.
 
-# Explanation
-Exploratory data analysis is used to understand the messages within a dataset. This technique involves many iterative processes to ensure that the cleaned data is further sorted to better understand the useful meaning.The primary aim with exploratory analysis is to examine the data for distribution, outliers and anomalies to direct specific testing of your hypothesis.
+## Aim
 
+To read the given data and perform the univariate analysis with different types of plots.
 
-# ALGORITHM
-## STEP 1
-Import the built libraries required to perform EDA and outlier removal.
+## Explanation
 
-## STEP 2
-Read the given csv file
+Univariate analysis is basically the simplest form to analyze data. Uni means one and this means that the data has only one kind of variable. The major reason for univariate analysis is to use the data to describe. The analysis will take data, summarise it, and then find some pattern in the data.
 
-## STEP 3
-Convert the file into a dataframe and get information of the data.
+## Algorithm
 
-## STEP 4
-Return the objects containing counts of unique values using (value_counts()).
+### Step1
+Read the given data.
 
-## STEP 5
-Plot the counts in the form of Histogram or Bar Graph.
+### Step2
+Get the information about the data.
 
-## STEP 6
-Use seaborn the bar graph comparison of data can be viewed.
+### Step3
+Remove the null values from the data.
 
-## STEP 7
-Save the final data set into the file
+### Step4
+Mention the datatypes from the data.
 
-# CODE
+### Step5
+Count the values from the data.
+
+### Step6
+Do plots like boxplots,countplot,distribution plot,histogram plot.
+
+## Program
 ```
-/* 
-Name : O. Shanthan Kumar Reddy
-Register Number : 212220040107
-**Univariate EDA - SuperStore.csv**
+Developed by : DHARSHINI DS
+Registration Number : 212221230022
+
 import pandas as pd
 import numpy as np
-import seaborn as snb
-df = pd.read_csv('/content/SuperStore.csv')
-df.head(10)
+import seaborn as sns
+df=pd.read_csv("SuperStore.csv")
+df
+df.head()
 df.info()
 df.describe()
+df.isnull().sum()
 df.dtypes
-df.isnull().sum()
-df['Postal Code'] = df["Postal Code"].fillna(df['Postal Code'].mode()[0])
-df.isnull().sum()
 df['Postal Code'].value_counts()
-snb.boxplot(x="Sales",data=df)
-snb.countplot(x="Sales",data=df)
-snb.distplot(df["Sales"])
-snb.histplot(x="Sales",data=df)
-df.skew()
-df.kurtosis()
-snb.histplot(x="Postal Code",data=df)
-snb.displot(x="Postal Code",data=df)
-snb.boxplot(x="Postal Code",data=df)
-snb.boxplot(x="Row ID",data=df)
-snb.histplot(x="Ship Mode",data=df)
-snb.countplot(x="Category",data=df)
-*/
+sns.boxplot(x="Postal Code", data=df)
+sns.countplot(x="Postal Code", data=df)
+sns.distplot(df["Postal Code"])
+sns.histplot(x="Postal Code", data=df)
 ```
-# OUPUT
-## EDA - SuperStore.csv
-![EDA](/images/img.png)
-## Displaying information about Dataset
-![EDA](/images/img2.png)
-![EDA](/images/img3.png)
-## Finding null values and cleaning it
-![EDA](/images/img4.png)
-## Value counts of "Postal Code"
-![EDA](/images/img5.png)
-## Distribution of Data 
-![EDA](/images/img8.png)
-## Univariate Analysis
-![EDA](/images/img6.png)
-![EDA](/images/img7.png)
-![EDA](/images/img9.png)
-![EDA](/images/img10.png)
-![EDA](/images/img11.png)
+## OUTPUT
 
-# RESULT
-Thus the program to perform EDA on the given data set is successfully executed.
+### DATA
+![DS1](https://user-images.githubusercontent.com/93427345/191898791-4de0a8c9-8581-41ea-8d84-b5ec9c6743c7.PNG)
+
+### DATA HEAD
+![DS2](https://user-images.githubusercontent.com/93427345/191898834-8d3130d9-0b40-4365-a3ea-74e3d28431d2.PNG)
+
+### DATA INFORMATION
+![DS3](https://user-images.githubusercontent.com/93427345/191898931-2e68fa8f-cf9d-43bc-a312-daf160e07afc.PNG)
+
+### DATA DESCRIBE
+![DS4](https://user-images.githubusercontent.com/93427345/191899037-e94c8007-a87b-4ead-b12d-71bd330a2a8c.PNG)
+
+### DATA NULL VALUES
+![DS5](https://user-images.githubusercontent.com/93427345/191899055-86795845-012e-4143-b9c9-8713c4a43ff4.PNG)
+
+### DATA DATA TYPES
+![DS6](https://user-images.githubusercontent.com/93427345/191899082-b33f146f-342f-4f3a-91eb-a75f3df20ffc.PNG)
+
+### DATA VALUE COUNT
+![DS7](https://user-images.githubusercontent.com/93427345/191899148-cd36cef2-1862-47bc-b22d-5b103fceb4cb.PNG)
+
+### BOXPLOT
+![DS8](https://user-images.githubusercontent.com/93427345/191899185-be661814-d402-4245-ba45-cbe649579323.PNG)
+
+### COUNTPLOT
+![DS9](https://user-images.githubusercontent.com/93427345/191899219-e401211a-2cfc-4307-94c8-80141da63e6c.PNG)
+
+### DISTRIBUTION PLOT
+![DS10](https://user-images.githubusercontent.com/93427345/191899278-36e61237-4504-4203-b341-bb5da1c7a3e8.PNG)
+
+### HISTOGRAM PLOT
+![DS11](https://user-images.githubusercontent.com/93427345/191899301-c3316b5a-2418-44e3-8422-c2e772aca695.PNG)
+
+## RESULT
+Thus we have read the given data and performed the univariate analysis with different types of plots.
